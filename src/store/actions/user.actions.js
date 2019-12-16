@@ -1,21 +1,21 @@
-import * as keys from '../keys/user.key';
+import * as keys from '../keys/users.key';
 import ApiService from '../../services/ApiService';
 
 export const fetchUsers = () => dispatch => {
   dispatch({
-    type: keys.FETCH_USER_PENDING,
+    type: keys.FETCH_USERS_PENDING,
     payload: '',
   });
-  ApiService.getUser()
+  ApiService.getUsers()
     .then(response => {
       dispatch({
-        type: keys.FETCH_USER_FULFILLED,
+        type: keys.FETCH_USERS_FULFILLED,
         payload: response.data,
       });
     })
     .catch(error => {
       dispatch({
-        type: keys.FETCH_USER_REJECTED,
+        type: keys.FETCH_USERS_REJECTED,
         payload: error,
       });
     });

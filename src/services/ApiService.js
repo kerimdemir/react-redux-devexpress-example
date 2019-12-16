@@ -1,13 +1,13 @@
 /* eslint-disable camelcase */
 import ajax from './AxiosService';
-const API_URL = 'https://uinames.com';
+const API_URL = 'https://jsonplaceholder.typicode.com/';
 const ApiService = function() {
-  const getUser = () => {
-    return ajax.get(API_URL + '/api/?amount=25');
+  const getUsers = () => {
+    return ajax.get(API_URL + 'todos1/api/users');
   };
 
   return {
-    getUser,
+    getUsers,
   };
 };
 
